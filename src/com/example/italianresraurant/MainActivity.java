@@ -7,33 +7,38 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		String[] specials={"Appetizer Special - Antipasto","Main Course - Spaghetti and Clams",
-				"Dessert Special - Tiramisu","La Scala Full Web Site"};
-		setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,specials));
-		}
-	protected void onListItemClick(ListView l,View v, int position, long id){
-		switch(position){
-		case 0:
-			startActivity(new Intent(MainActivity.this,Antipasto.class));
-			break;
-		case 1:
-			startActivity(new Intent(MainActivity.this,Clams.class));
-			break;
-		case 2:
-			startActivity(new Intent(MainActivity.this,Tiramisu.class));
-			break;
-		case 3:
-			startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.lascaladining.com/")));
-			break;
-		}
+		setContentView(R.layout.activity_main);
+		Button specials = (Button)findViewById(R.id.btnSpecials);
+		specials.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(MainActivity.this, Specials.class));
+			}
+			
+		});
+		
+		Button web = (Button)findViewById(R.id.btnWeb);
+		web.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.lascaladining.com/")));
+			}
+			
+		});
 	}
 
 	@Override
