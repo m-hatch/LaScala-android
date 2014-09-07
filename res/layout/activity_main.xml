@@ -18,9 +18,8 @@
         android:id="@+id/btnSpecials"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnBrowse"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/imgLogo"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         android:text="View Specials" />
 
