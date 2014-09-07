@@ -16,7 +16,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Black" >
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +26,15 @@
         <activity android:name=".Specials"
             android:theme="@android:style/Theme.Black" >
         </activity>
-        <activity android:name=".Antipasto"></activity>
-        <activity android:name=".Clams"></activity>
-        <activity android:name=".Tiramisu"></activity>
+        <activity android:name=".Antipasto"
+            android:theme="@android:style/Theme.Black" >
+        </activity>
+        <activity android:name=".Clams"
+            android:theme="@android:style/Theme.Black" >
+        </activity>
+        <activity android:name=".Tiramisu"
+            android:theme="@android:style/Theme.Black" >
+        </activity>
     </application>
 
 </manifest>
