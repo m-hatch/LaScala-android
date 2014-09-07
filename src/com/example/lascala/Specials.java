@@ -14,8 +14,8 @@ public class Specials extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		String[] specials={"Appetizer Special - Antipasto","Main Course - Spaghetti and Clams",
-				"Dessert Special - Tiramisu","La Scala Full Web Site"};
+		String[] specials={"Appetizer - Antipasto","Main Course - Spaghetti and Clams",
+				"Dessert - Tiramisu","Back to Top"};
 		setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,specials));
 		}
 	protected void onListItemClick(ListView l,View v, int position, long id){
@@ -30,7 +30,7 @@ public class Specials extends ListActivity {
 			startActivity(new Intent(Specials.this,Tiramisu.class));
 			break;
 		case 3:
-			startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.lascaladining.com/")));
+			startActivity(new Intent(Specials.this,MainActivity.class));
 			break;
 		}
 	}
